@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    border: 1px solid red;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.container, .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+.container > * {
+    width: 50px;
+    text-align: center;
+}
+
+.active {
+    color: aliceblue;
+    background: linear-gradient(113deg,rgba(212, 72, 196, 1) 0%, rgba(237, 134, 37, 1) 100%);
+}
+
+button {
+    width: 50px;
+    border-radius: 4px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}

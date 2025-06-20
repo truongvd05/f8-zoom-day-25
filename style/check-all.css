@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    border: 1px solid black;
+    min-width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all linear 0.2s;
+
+}
+.title {
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+ul:hover {
+    border: 1px solid rgb(255, 45, 171);
+}
+
+label {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    transition: all linear 0.2s;
+}
+label:hover {
+    color:  pink;
+}
+
+li {
+    list-style: none;
+}
+span {
+    margin-left: 5px;
+}
