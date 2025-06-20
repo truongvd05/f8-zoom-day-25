@@ -39,6 +39,8 @@ $$(".dot")[0].classList.add("dot-active");
 controls.onclick = function (e) {
     const controlsImg = e.target.closest(".btn");
     const dots = $$(".dot");
+    const btnNext = $(".next");
+
     if (controlsImg.matches(".next")) {
         a++;
         if (a === imgs.length) {
@@ -87,16 +89,14 @@ function loop() {
     dots[a].classList.add("dot-active");
 }
 
-let loopImg = setInterval(loop, 2000);
+let loopImg = setInterval(loop, 3000);
 
 // hover thì ảnh ko chuyển tiếp nữa
 slideShow.addEventListener("mouseenter", () => {
     clearInterval(loopImg);
-    console.log("123");
 });
 
 // ko hover thì ảnh chuyển tiếp
 slideShow.addEventListener("mouseleave", () => {
-    console.log("456");
-    loopImg = setInterval(loop, 2000);
+    loopImg = setInterval(loop, 3000);
 });
