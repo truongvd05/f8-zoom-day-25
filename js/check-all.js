@@ -20,8 +20,11 @@ const title = $(".title");
 function checkAllInput() {
     const checkmax = input.length;
     const checkInput = [...input].filter((item) => item.checked);
+
     if (checkInput.length === checkmax) {
         all.indeterminate = false;
+        all.toggleAttribute("checked");
+
         all.checked = true;
     } else if (checkInput.length) {
         all.indeterminate = true;
@@ -41,12 +44,12 @@ function escapeseHTML(html) {
 // check tất cả or bỏ check
 all.onclick = function () {
     all.toggleAttribute("checked");
+
     if (all.hasAttribute("checked")) {
         input.forEach((item) => {
             item.checked = true;
         });
         const checkInput = [...input].filter((item) => item.checked);
-
         title.textContent = `số row check là ${escapeseHTML(
             checkInput.length
         )}`;
