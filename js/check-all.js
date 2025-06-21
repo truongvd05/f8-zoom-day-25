@@ -15,6 +15,7 @@ input.forEach((item) => {
         checkAllInput();
     };
 });
+const title = $(".title");
 
 function checkAllInput() {
     const checkmax = input.length;
@@ -28,7 +29,6 @@ function checkAllInput() {
         all.indeterminate = false;
         all.checked = false;
     }
-    const title = $(".title");
     title.textContent = `số row check là ${escapeseHTML(checkInput.length)}`;
 }
 
@@ -45,9 +45,18 @@ all.onclick = function () {
         input.forEach((item) => {
             item.checked = true;
         });
+        const checkInput = [...input].filter((item) => item.checked);
+
+        title.textContent = `số row check là ${escapeseHTML(
+            checkInput.length
+        )}`;
     } else {
         input.forEach((item) => {
             item.checked = false;
         });
+        const checkInput = [...input].filter((item) => item.checked);
+        title.textContent = `số row check là ${escapeseHTML(
+            checkInput.length
+        )}`;
     }
 };
