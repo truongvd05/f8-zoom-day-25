@@ -7,8 +7,6 @@ const input = $$(".checkbox-item");
 const all = $(".checkbox-all");
 const body = document.body;
 
-console.log(all);
-
 input.forEach((item) => {
     item.onclick = function (e) {
         const target = e.target.closest("input");
@@ -28,6 +26,7 @@ function checkAllInput() {
         all.indeterminate = true;
     } else {
         all.indeterminate = false;
+        all.checked = false;
     }
     const title = $(".title");
     title.textContent = `số row check là ${escapeseHTML(checkInput.length)}`;
@@ -38,3 +37,17 @@ function escapeseHTML(html) {
     div.textContent = html;
     return div.innerHTML;
 }
+
+// check tất cả or bỏ check
+all.onclick = function () {
+    all.toggleAttribute("checked");
+    if (all.hasAttribute("checked")) {
+        input.forEach((item) => {
+            item.checked = true;
+        });
+    } else {
+        input.forEach((item) => {
+            item.checked = false;
+        });
+    }
+};
