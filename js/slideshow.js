@@ -93,10 +93,10 @@ let loopImg = setInterval(loop, 3000);
 
 // hover thì ảnh ko chuyển tiếp nữa
 slideShow.addEventListener("mouseenter", () => {
-    clearInterval(loopImg);
+    return clearInterval(loopImg);
 });
 
 // ko hover thì ảnh chuyển tiếp
 slideShow.addEventListener("mouseleave", () => {
-    loopImg = setInterval(loop, 3000);
+    return (loopImg = setInterval(loop, 3000));
 });
